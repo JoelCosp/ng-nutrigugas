@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import emailjs, { type EmailJSResponseStatus } from '@emailjs/browser';
 
 interface ContactForm {
   name: string,
@@ -22,6 +23,10 @@ export class ContactComponent {
   }
 
   send() {
-    console.log(this.form);
+    emailjs.send('service_rbubghd', 'template_m56ncsz', {...this.form}, {
+      publicKey: 'ihb9r2Ly2QLSr7jJO'
+    }).then(() => {
+      console.log("---> ¡EMAIL SENT!")
+    })
   }
 }
