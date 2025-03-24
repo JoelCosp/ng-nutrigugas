@@ -1,16 +1,15 @@
 <header class="hidden sm:flex text-gray-600 body-font fixed top-0 left-0 z-50 right-0 bg-[#131010]">
   <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
-    <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full" viewBox="0 0 24 24">
-        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
-      </svg>
-      <span class="ml-3 text-xl">Tailblocks</span>
+    <a class="flex title-font font-medium items-center mb-4 md:mb-0" routerLink="/">
+
+      <svg class="w-10 g-10" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path fill="#D98324" d="M128 352.576V352a288 288 0 0 1 491.072-204.224 192 192 0 0 1 274.24 204.48 64 64 0 0 1 57.216 74.24C921.6 600.512 850.048 710.656 736 756.992V800a96 96 0 0 1-96 96H384a96 96 0 0 1-96-96v-43.008c-114.048-46.336-185.6-156.48-214.528-330.496A64 64 0 0 1 128 352.64zm64-.576h64a160 160 0 0 1 320 0h64a224 224 0 0 0-448 0zm128 0h192a96 96 0 0 0-192 0zm439.424 0h68.544A128.256 128.256 0 0 0 704 192c-15.36 0-29.952 2.688-43.52 7.616 11.328 18.176 20.672 37.76 27.84 58.304A64.128 64.128 0 0 1 759.424 352zM672 768H352v32a32 32 0 0 0 32 32h256a32 32 0 0 0 32-32v-32zm-342.528-64h365.056c101.504-32.64 165.76-124.928 192.896-288H136.576c27.136 163.072 91.392 255.36 192.896 288z"></path></g></svg>
+      <span class="ml-1 text-xl text-white hover:text-gray-300">Nutrigugas</span>
     </a>
     <nav class="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center text-white">
       <a class="mr-5 hover:text-gray-300" routerLink="/">INICIO</a>
-      <a class="mr-5 hover:text-gray-300" routerLink="/about">SOBRE MI</a>
-      <a class="mr-5 hover:text-gray-300" routerLink="/services">SERVICIOS</a>
       <a class="mr-5 hover:text-gray-300" routerLink="/blog">BLOG</a>
+      <a class="mr-5 hover:text-gray-300" routerLink="/about">SOBRE MI</a>
+      <!-- <a class="mr-5 hover:text-gray-300" routerLink="/services">SERVICIOS</a> -->
     </nav>
     <a target="_blank" href="https://www.instagram.com/nutrigugas?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">
       <img width="40" height="40" class="rounded-full" src="https://static.vecteezy.com/system/resources/previews/002/002/403/non_2x/man-with-beard-avatar-character-isolated-icon-free-vector.jpg" alt="">
@@ -20,41 +19,46 @@
 
 <header class="sm:hidden fixed top-0 left-0 z-50 right-0">
   <div class="px-4 pt-4">
-    <button (click)="toggleBtn()">
-      <img width="35" height="35" src="menu-icon.svg" alt="">
+    <button (click)="toggleBtn()" class="bg-white rounded-lg p-1">
+      <img class="brightness-0" width="30" height="35" src="menu-icon.svg" alt="">
     </button>
   </div>
-  <div id="drawer-navigation" [ngClass]="{ 'flex': mobile_menu, 'hidden': !mobile_menu }" class="fixed top-0 left-0 z-40 w-64 h-screen p-4 overflow-y-auto transition-transform bg-white dark:bg-gray-800" tabindex="-1" aria-labelledby="drawer-navigation-label">
+  <div id="drawer-navigation" [ngClass]="{ 'flex': mobile_menu, 'hidden': !mobile_menu }" class="fixed flex-col justify-between items-start top-0 left-0 z-40 w-64 h-screen p-4 overflow-y-auto transition-transform bg-[#131010]" tabindex="-1" aria-labelledby="drawer-navigation-label">
     <button (click)="toggleBtn()" type="button" data-drawer-hide="drawer-navigation" aria-controls="drawer-navigation" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 absolute top-2.5 end-2.5 inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white" >
         <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
     </button>
-  <div class="py-4 overflow-y-auto">
-      <ul class="space-y-2 font-medium">
-         <li routerLink="/">
-            <a href="#" class="flex items-center p-2 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
-              <!-- FALTA AÑADIR LOS ICONOS CON EL COLOR CORRESPONDIENTE --> 
-              <span class="ms-3">INICIO</span>
-            </a>
-         </li>
-         <li routerLink="/about">
-            <a href="#" class="flex items-center p-2 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
-              <!-- FALTA AÑADIR LOS ICONOS CON EL COLOR CORRESPONDIENTE --> 
-              <span class="ms-3">SOBRE MI</span>
-            </a>
-         </li>
-         <li routerLink="/services">
-            <a href="#" class="flex items-center p-2 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
-              <!-- FALTA AÑADIR LOS ICONOS CON EL COLOR CORRESPONDIENTE --> 
-              <span class="ms-3">SERVICIOS</span>
-            </a>
-         </li>
-         <li routerLink="/blog">
-            <a href="#" class="flex items-center p-2 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
-              <!-- FALTA AÑADIR LOS ICONOS CON EL COLOR CORRESPONDIENTE --> 
-              <span class="ms-3">BLOG</span>
-            </a>
-         </li>
-      </ul>
-   </div>
-</div>
+    
+    <div class="py-4 overflow-y-auto">
+        <ul class="space-y-2 font-medium">
+          <li routerLink="/">
+              <a href="#" class="flex items-center p-2 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                <!-- FALTA AÑADIR LOS ICONOS CON EL COLOR CORRESPONDIENTE --> 
+                <span class="ms-3">INICIO</span>
+              </a>
+          </li>
+          <li routerLink="/about">
+              <a href="#" class="flex items-center p-2 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                <!-- FALTA AÑADIR LOS ICONOS CON EL COLOR CORRESPONDIENTE --> 
+                <span class="ms-3">SOBRE MI</span>
+              </a>
+          </li>
+          <li routerLink="/services">
+              <a href="#" class="flex items-center p-2 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                <!-- FALTA AÑADIR LOS ICONOS CON EL COLOR CORRESPONDIENTE --> 
+                <span class="ms-3">SERVICIOS</span>
+              </a>
+          </li>
+          <li routerLink="/blog">
+              <a href="#" class="flex items-center p-2 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                <!-- FALTA AÑADIR LOS ICONOS CON EL COLOR CORRESPONDIENTE --> 
+                <span class="ms-3">BLOG</span>
+              </a>
+          </li>
+        </ul>
+    </div>
+    <div class="flex font-medium items-center ml-2 pb-4">
+      <svg class="w-10 g-10" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path fill="#D98324" d="M128 352.576V352a288 288 0 0 1 491.072-204.224 192 192 0 0 1 274.24 204.48 64 64 0 0 1 57.216 74.24C921.6 600.512 850.048 710.656 736 756.992V800a96 96 0 0 1-96 96H384a96 96 0 0 1-96-96v-43.008c-114.048-46.336-185.6-156.48-214.528-330.496A64 64 0 0 1 128 352.64zm64-.576h64a160 160 0 0 1 320 0h64a224 224 0 0 0-448 0zm128 0h192a96 96 0 0 0-192 0zm439.424 0h68.544A128.256 128.256 0 0 0 704 192c-15.36 0-29.952 2.688-43.52 7.616 11.328 18.176 20.672 37.76 27.84 58.304A64.128 64.128 0 0 1 759.424 352zM672 768H352v32a32 32 0 0 0 32 32h256a32 32 0 0 0 32-32v-32zm-342.528-64h365.056c101.504-32.64 165.76-124.928 192.896-288H136.576c27.136 163.072 91.392 255.36 192.896 288z"></path></g></svg>
+      <span class="ml-1 text-xl text-white hover:text-gray-300">Nutrigugas</span>
+    </div>
+  </div>
 </header>
